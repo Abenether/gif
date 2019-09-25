@@ -1,3 +1,5 @@
+
+
 let counter = 30;
 
 let currentQuestion = 0;
@@ -8,74 +10,7 @@ let lost = 0;
 
 let timer;
 
-$("#game").html(question);
-
-
-// If the timer is over, then go to the next question
-
-function nextQuestion() {
-
-    const isQuestionOver = (quizQuestions.length - 1) === currentQuestion;
-
-    if (isQuestionOver) {
-
-        // TODO
-
-        console.log('Game is over!!!!!');
-
-        displayResult();
-
-    } else {
-
-        currentQuestion++;
-
-        loadQuestion();
-
-    }
-
-    
-
-}
-
-
-
-
-function timeUp() {
-
-    clearInterval(timer);
-
-
-
-    lost++;
-
-
-
-    preloadImage('lost');
-
-    setTimeout(nextQuestion, 3 * 1000);
-
-}
-
-
-
-function countDown() {
-
-    counter--;
-
-
-
-    $('#time').html('Timer: ' + counter);
-
-
-
-    if (counter === 0) {
-
-        timeUp();
-
-    }
-
-}
-
+// Display the question and the choices to the browser
 
 function loadQuestion() {
 
@@ -125,6 +60,76 @@ function loadChoices(choices) {
 
 }
 
+// Start a 30 seconds timer for user to respond or choose an answer to each question
+
+function timeUp() {
+
+    clearInterval(timer);
+
+
+
+    lost++;
+
+
+
+    preloadImage('lost');
+
+    setTimeout(nextQuestion, 3 * 1000);
+
+}
+
+
+
+function countDown() {
+
+    counter--;
+
+
+
+    $('#time').html('Timer: ' + counter);
+
+
+
+    if (counter === 0) {
+
+        timeUp();
+
+    }
+
+}
+
+
+// If the timer is over, then go to the next question
+
+function nextQuestion() {
+
+    const isQuestionOver = (quizQuestions.length - 1) === currentQuestion;
+
+    if (isQuestionOver) {
+
+        // TODO
+
+        console.log('Game is over!!!!!');
+
+        displayResult();
+
+    } else {
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+    
+
+}
+
+
+
+// Either correct/wrong choice selected, go to the next question
+
+// Event Delegation
 
 $(document).on('click', '.choice', function() {
 
