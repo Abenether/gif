@@ -255,27 +255,11 @@ function preloadImage(status) {
 
     if (status === 'win') {
 
-        $('#game').html(`
-
-            <p class="preload-image">Congratulations, you pick the corrrect answer</p>
-
-            <p class="preload-image">The correct answer is <b>${correctAnswer}</b></p>
-
-            <img src="${randomImage(funImages)}" />
-
-        `);
+        alert("correct");
 
     } else {
 
-        $('#game').html(`
-
-            <p class="preload-image">The correct answer was <b>${correctAnswer}</b></p>
-
-            <p class="preload-image">You lost pretty bad</p>
-
-            <img src="${randomImage(sadImages)}" />
-
-        `);
+        alert("incorrect");
 
     }
 
