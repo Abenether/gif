@@ -114,28 +114,3 @@ const quizQuestions = [
 
 
 
-const funImages = [
-
-    './assets/images/happy fun.gif',
-
-    './assets/images/hellYeah.gif',
-
-    './assets/images/winning.gif',
-
-    './assets/images/yeah.gif',
-
-    './assets/images/you did it.gif'
-
-];
-
-
-
-const sadImages = [
-
-    './assets/images/danm.gif',
-
-    './assets/images/oops.gif',
-
-    './assets/images/pretty bad.gif'
-
-];
